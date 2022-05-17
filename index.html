@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex Colour Genrator</title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+        .main{
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 200px;
+            width: 600px;
+            background: #fff;
+            box-shadow: 0 0 3px #333;
+            border-radius: 10px;
+        }
+        #colourPanel{
+            background: none;
+            outline: none;
+            border: none;
+            height: 40px;
+            width: 60px;
+            cursor: pointer;
+        }
+        #btn{
+            outline: none;
+            border: none;
+            background: #000000;
+            color: #fff;
+            height: 40px;
+            width: 140px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        #box{
+            outline:none;
+            border: 2px solid #333;
+            border-radius: 50px;
+            height: 40px;
+            width: 120px;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        Generate Colour: <input type="color" id="colourPanel">
+        <input type="button" id="btn" value="Get Colour" onclick="myColor()">
+        Result: <input type="text" id="box">
+    </div>
+
+    <script>
+        function myColor(){
+            var colour = document.getElementById('colourPanel').value;
+            document.body.style.backgroundColor = colour;
+            document.getElementById('box').value = colour;
+        }
+    </script>
+</body>
+</html>
